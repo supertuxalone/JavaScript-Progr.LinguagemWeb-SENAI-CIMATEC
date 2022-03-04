@@ -6,8 +6,8 @@ var result = document.querySelectorAll(".paciente");
 
 //atraves do for vare os resultados obtidos
 for (var i = 0; i < result.length; i++) {
+    //console.log(result.length); = 5
   var paciente = result[i];
- // var paciente = document.querySelector(".paciente");
   var tdpeso = paciente.querySelector(".info-peso");
   var peso = tdpeso.textContent;
   var tdAltura = paciente.querySelector(".info-altura");
@@ -18,6 +18,7 @@ for (var i = 0; i < result.length; i++) {
   var pesoValidade = true;
   var alturaValidade = true;
 
+  //CONDICIONAMENTO DE PESO E ALTURA, PARQ QUE ASSIM POSSA CALCULAR O IMC 
   if ((peso <= 0 || peso >= 1000)) {
     console.log("Peso Inválido");
     pesoValidade = false;
