@@ -23,12 +23,14 @@ for (var i = 0; i < result.length; i++) {
     console.log("Peso Inválido");
     pesoValidade = false;
     imclinha.textContent = "Inválido";
+    imclinha.style.color = "red";
   }
 
-  if ((altura <= 0 || altura >= 3,00)) {
+  if ((altura <= 0 || altura >= 3.00)) {
     console.log("Altura Invalida");
     alturaValidade = false;
     imclinha.textContent = "Inválida";
+    imclinha.style.color = "red";
   }
 
   if (pesoValidade && alturaValidade) {
