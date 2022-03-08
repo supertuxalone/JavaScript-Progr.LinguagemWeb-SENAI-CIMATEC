@@ -1,0 +1,35 @@
+#############################################################################
+JS
+	- CRIANDO "PRIMEIRO" ARQUIVO 
+		- CRIAR principal.js
+		- criar classe nos elemetos do html que queremos atacar, por exemplo 
+					<h1 class="titulo">Aparecida Nutrição</h1>
+					
+		- na principal.js 
+			- usar a "função seletora" para buscar no html o element desejado, junto com uma
+			variável de nome semântico.
+				vat titulo = document.querySelector(".titulo");
+			
+			- Acessar e alterar a propriedade textContent
+				titulo.textContent = "Aparecida Nutricionista";
+				
+		- Ver Resultado !
+		
+	Exercio que calcula o IMC de uma tabela onde a <TR> contem os valores em <TD> e é necessário pegar os valores
+		atraves do querySelector jogar em variavel e  
+	
+		var paciente = document.querySelector("#paciente1");
+		var tdpeso = paciente.querySelector(".info-peso");
+		var peso = tdpeso.textContent;
+
+		// //PAULO
+		var tdAltura = document.querySelector(".info-altura");
+		var altura = tdAltura.textContent;
+
+		var imc = peso / (altura * altura);
+
+		console.log(imc);
+
+		var imclinha = document.querySelector(".info-imc");
+
+		imclinha.textContent = (imc);
