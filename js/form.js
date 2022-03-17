@@ -7,10 +7,6 @@ botaoAdicionar.addEventListener("click", function (event) {
 
   // acessar o valor de um campo em JavaScript, utilizaremos a propriedade value
   var paciente = obtemPacienteDoFormulario(form);
-  /* var nome = form.nome.value;
-  var peso = form.peso.value;
-  var altura = form.altura.value;
-  var gordura = form.gordura.value; */
 
   //Criando um elemento HTML com JavaScript
   var pacientetr = montatr(paciente); 
