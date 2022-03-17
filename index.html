@@ -113,9 +113,79 @@
 				</form>
 			</div>
 		</form>
+
+		<!-- CALCULO DE TABUADA SIMPLES -->
+		<button class="botaocal">Calcula</button>
+		<input class="numerocal">
+		<input class="tabuadacal">
+		<span class="resultadocal"></span>
+		<br>
+		<br>
+
+		<ul>
+			<li class="convidado">
+				Nome <span class="nome">Douglas</span>,
+				idade <span class="idade">23</span>
+			</li>
+			<li class="convidado">
+				Nome <span class="nome">Daniel</span>,
+				idade <span class="idade">42</span>
+			</li>    
+			<li class="convidado">
+				Nome <span class="nome">Marcos</span>,
+				idade <span class="idade">27</span>
+			</li>    
+			<li class="convidado">
+				Nome <span class="nome">Flávio</span>,
+				idade <span class="idade">18</span>
+			</li>
+		
+			Total das idades: <span class="total"></span>
+			<br>
+			<br>
+		</ul>
+		<script>
+		
+			var itens = document.querySelectorAll('.convidado');
+		
+			var totalDasIdades = 0;
+		
+			for(var i = 0; i < itens.length; i++) {
+		
+				var idade = itens[i].querySelector('.idade').textContent;
+				totalDasIdades+=parseInt(idade);
+			}
+		
+			document.querySelector('.total').textContent = totalDasIdades;
+		
+		</script>
+
 	</section>
 	<script src="js/calcula-imc.js"></script>
 	<script src="js/form.js"></script>
+
+	<!-- FUNÇÃO DA TUBUADA SIMPLES -->
+	<script>
+
+		function buscaElement(seletor){
+			return document.querySelector(seletor);
+		}
+
+		function aplicaTabuada(numero, tabuada){
+			return numero * tabuada;
+		}
+
+		var botao = buscaElement('.botaocal');
+		var numero = buscaElement('.numerocal');
+		var tabuada = buscaElement('.tabuadacal');
+		var resultado = buscaElement('.resultadocal');
+
+		botao.addEventListener('click', function () {
+
+			resultado.textContent = aplicaTabuada(numero.value, tabuada.value);
+
+		});
+	</script>
 </body>
 
 </html>

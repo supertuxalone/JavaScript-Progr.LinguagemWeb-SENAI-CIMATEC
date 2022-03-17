@@ -6,42 +6,60 @@ botaoAdicionar.addEventListener("click", function (event) {
   var form = document.querySelector("#form-adiciona");
 
   // acessar o valor de um campo em JavaScript, utilizaremos a propriedade value
-  var nome = form.nome.value;
+  var paciente = obtemPacienteDoFormulario(form);
+  /* var nome = form.nome.value;
   var peso = form.peso.value;
   var altura = form.altura.value;
-  var gordura = form.gordura.value;
+  var gordura = form.gordura.value; */
 
   //Criando um elemento HTML com JavaScript
-
-  //criar um paciente, vamos criar uma nova tr
-  var pacientetr = document.createElement("tr");
-
-  //criar um elemento, podemos criar as td s
-  var nometd = document.createElement("td");
-  var pesotd = document.createElement("td");
-  var alturatd = document.createElement("td");
-  var gorduratd = document.createElement("td");
-  var imctd = document.createElement("td");
-
-  // na tr. Vamos por passos, primeiro colocando os dados dentro das tds
-  nometd.textContent = nome;
-  pesotd.textContent = peso;
-  alturatd.textContent = altura;
-  gorduratd.textContent = gordura;
-  imctd.textContent = calculaImc(peso,altura);
-
-  //Utilizando o JavaScript para adicionar um elemento dentro de outro
-
-  //cada td dentro da tr usando appendChild
-  pacientetr.appendChild(nometd);
-  pacientetr.appendChild(pesotd);
-  pacientetr.appendChild(alturatd);
-  pacientetr.appendChild(gorduratd);
-  pacientetr.appendChild(imctd);
+  var pacientetr = montatr(paciente); 
 
   //colocarmos ele dentro da tabela
   var tabela = document.querySelector("#tabela-pacientes");
 
   //selecionar a tabela e adicionar a tr usando o appendChild
-  tabela.appendChild(pacientetr); 
+  tabela.appendChild(pacientetr);
+  
+  form.reset();
 });
+
+function obtemPacienteDoFormulario(form) {
+
+  var paciente = {
+      nome: form.nome.value,
+      peso: form.peso.value,
+      altura: form.altura.value,
+      gordura: form.gordura.value,
+      imc: calculaImc(form.peso.value, form.altura.value)
+  }
+  return paciente;
+}
+
+function montatr(paciente){
+//criar um paciente, vamos criar uma nova tr
+ var pacientetr = document.createElement("tr");
+ pacientetr.classList.add("paciente");
+
+ //Utilizando o JavaScript para adicionar um elemento dentro de outro
+
+ //criar um elemento, podemos criar as td s
+ //cada td dentro da tr usando appendChild
+ pacientetr.appendChild(montatd(paciente.nome, "info-nome"));
+ pacientetr.appendChild(montatd(paciente.peso, "info-peso"));
+ pacientetr.appendChild(montatd(paciente.altura, "info-altura"));
+ pacientetr.appendChild(montatd(paciente.gordura, "info-gordura"));
+ pacientetr.appendChild(montatd(paciente.imc, "info-imc"));
+
+ return pacientetr;
+}
+
+function montatd(dado, classe){
+ var td = document.createElement("td");
+ // na tr. Vamos por passos, primeiro colocando os dados dentro das tds
+ td.textContent = dado;
+ td.classList.add(classe);
+  
+ return td;
+
+}
