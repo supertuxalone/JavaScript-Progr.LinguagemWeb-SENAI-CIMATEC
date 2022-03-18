@@ -3,7 +3,7 @@ titulo.textContent = "Aparecida a Nutricionista";
 
 //códigos exibe o mesmo resultado
 var titulo = document.querySelector("#botao-adicionar");
-titulo.addEventListener("click", function(){
+titulo.addEventListener("click", function () {
   console.log("Fui clicado");
 });
 
@@ -21,28 +21,28 @@ for (var i = 0; i < result.length; i++) {
 
   var imclinha = paciente.querySelector(".info-imc");
 
-  var pesoValidade = true;
-  var alturaValidade = true;
+  var pesoEhValido = validaPeso(peso);
+  var alturaEhValida = validaAltura(altura);
 
   //CONDICIONAMENTO DE PESO E ALTURA, PARQ QUE ASSIM POSSA CALCULAR O IMC
-  if (peso <= 0 || peso >= 1000) {
+  if (!pesoEhValido) {
     console.log("Peso Inválido");
-    pesoValidade = false;
+    pesoEhValido = false;
     imclinha.textContent = "Inválido";
     imclinha.style.color = "red";
     paciente.classList.add("paciente-invalido");
   }
 
-  if (altura <= 0 || altura >= 3.0) {
+  if (!alturaEhValida) {
     console.log("Altura Invalida");
-    alturaValidade = false;
+    alturaEhValida = false;
     imclinha.textContent = "Inválida";
     imclinha.style.color = "red";
     paciente.classList.add("paciente-invalido");
   }
 
   //CALCULAR O IMC
-  if (pesoValidade && alturaValidade) {
+  if (pesoEhValido && alturaEhValida) {
     var imc = calculaImc(peso, altura);
     imclinha.textContent = imc;
   }
@@ -54,6 +54,23 @@ function calculaImc(peso, altura) {
   imc = peso / (altura * altura);
 
   return imc.toFixed(2);
+}
+
+function validaPeso(peso) {
+
+  if (peso >= 0 && peso <= 1000) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function validaAltura(altura) {
+
+  if (altura >= 0 && altura <= 3.00) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 //EVENTO DE CLIQUE
@@ -71,14 +88,14 @@ botaoAdicionar.addEventListener("click", function (event) {
 });
 
 /* ###################################################################################
- *//* 
- //MARIA
- var botao = document.querySelector('#adicionar-paciente');
+ *//*
+//MARIA
+var botao = document.querySelector('#adicionar-paciente');
 
- function botaoHandler() {
+function botaoHandler() {
 
-     alert('Botão clicado');
- } */
+    alert('Botão clicado');
+} */
 //Como a função não retorna nada, o código que será executado será igual a nada quando o botão for clicado
 //botao.addEventListener('click', botaoHandler);
 

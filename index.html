@@ -64,7 +64,7 @@
 					</tr>
 					<tr class="paciente">
 						<td class="info-nome">Tatiana</td>
-						<td class="info-peso">46000</td>
+						<td class="info-peso">46</td>
 						<td class="info-altura">1.55</td>
 						<td class="info-gordura">19</td>
 						<td class="info-imc">0</td>
@@ -78,6 +78,12 @@
 	<section class="container">
 		</br>
 		<h2 id="titulo-form">Adicionar novo paciente</h2>
+		<ul id="mensagens-erro">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
 		<form id="form-adiciona">
 			<div>
 				<div class="grupo">
@@ -130,34 +136,34 @@
 			<li class="convidado">
 				Nome <span class="nome">Daniel</span>,
 				idade <span class="idade">42</span>
-			</li>    
+			</li>
 			<li class="convidado">
 				Nome <span class="nome">Marcos</span>,
 				idade <span class="idade">27</span>
-			</li>    
+			</li>
 			<li class="convidado">
 				Nome <span class="nome">Flávio</span>,
 				idade <span class="idade">18</span>
 			</li>
-		
+
 			Total das idades: <span class="total"></span>
 			<br>
 			<br>
 		</ul>
 		<script>
-		
+
 			var itens = document.querySelectorAll('.convidado');
-		
+
 			var totalDasIdades = 0;
-		
-			for(var i = 0; i < itens.length; i++) {
-		
+
+			for (var i = 0; i < itens.length; i++) {
+
 				var idade = itens[i].querySelector('.idade').textContent;
-				totalDasIdades+=parseInt(idade);
+				totalDasIdades += parseInt(idade);
 			}
-		
+
 			document.querySelector('.total').textContent = totalDasIdades;
-		
+
 		</script>
 
 	</section>
@@ -167,11 +173,11 @@
 	<!-- FUNÇÃO DA TUBUADA SIMPLES -->
 	<script>
 
-		function buscaElement(seletor){
+		function buscaElement(seletor) {
 			return document.querySelector(seletor);
 		}
 
-		function aplicaTabuada(numero, tabuada){
+		function aplicaTabuada(numero, tabuada) {
 			return numero * tabuada;
 		}
 
