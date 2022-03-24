@@ -2,10 +2,11 @@ var titulo = document.querySelector(".titulo");
 titulo.textContent = "Aparecida a Nutricionista";
 
 //códigos exibe o mesmo resultado
-var titulo = document.querySelector("#botao-adicionar");
+/* var titulo = document.querySelector("#botao-adicionar");
 titulo.addEventListener("click", function () {
   console.log("Fui clicado");
 });
+ */
 
 //captura no documento a classe .paciente e jogar em result
 var result = document.querySelectorAll(".paciente");
@@ -55,7 +56,8 @@ function calculaImc(peso, altura) {
 
   return imc.toFixed(2);
 }
-
+/* 
+ validação de peso e altura para duas funções externas, a validaPeso e a validaAltura */
 function validaPeso(peso) {
 
   if (peso >= 0 && peso <= 1000) {

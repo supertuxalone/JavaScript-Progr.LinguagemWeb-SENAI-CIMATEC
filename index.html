@@ -42,7 +42,7 @@
 					<tr class="paciente">
 						<td class="info-nome">João</td>
 						<td class="info-peso">80</td>
-						<td class="info-altura">4.72</td>
+						<td class="info-altura">2.72</td>
 						<td class="info-gordura">40</td>
 						<td class="info-imc">0</td>
 					</tr>
@@ -78,6 +78,7 @@
 	<section class="container">
 		</br>
 		<h2 id="titulo-form">Adicionar novo paciente</h2>
+		<!-- mensagens de erro de dentro do Array. Para isto, vamos criar uma <ul> -->
 		<ul id="mensagens-erro">
 			<li></li>
 			<li></li>
@@ -109,19 +110,16 @@
 				<!-- <input class="frase"><button class="botao">Copiar</button><span class="copia"></span>-->
 
 				<ul class="afazeres">
-					<li>Ir ao médico</li>
-					<li>Trocar a senha do Wifi</li>
-					<li>Estudar Javascript</li>
+					
 				</ul>
 				<form class="adicionar-tarefa">
-					<input type="text" name="tarefa">
-					<button id="botao-adicionar">Salvar</button>
+					
 				</form>
 			</div>
 		</form>
 
 		<!-- CALCULO DE TABUADA SIMPLES -->
-		<button class="botaocal">Calcula</button>
+		<!-- <button class="botaocal">Calcula</button>
 		<input class="numerocal">
 		<input class="tabuadacal">
 		<span class="resultadocal"></span>
@@ -164,14 +162,14 @@
 
 			document.querySelector('.total').textContent = totalDasIdades;
 
-		</script>
+		</script> -->
 
 	</section>
 	<script src="js/calcula-imc.js"></script>
 	<script src="js/form.js"></script>
 
 	<!-- FUNÇÃO DA TUBUADA SIMPLES -->
-	<script>
+	<!-- <script>
 
 		function buscaElement(seletor) {
 			return document.querySelector(seletor);
@@ -191,7 +189,7 @@
 			resultado.textContent = aplicaTabuada(numero.value, tabuada.value);
 
 		});
-	</script>
+	</script> -->
 </body>
 
 </html>
