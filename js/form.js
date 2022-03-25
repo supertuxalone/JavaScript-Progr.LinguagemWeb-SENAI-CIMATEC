@@ -15,7 +15,7 @@ botaoAdicionar.addEventListener("click", function (event) {
   //Criando um elemento HTML com JavaScript
   var pacientetr = montatr(paciente);
   var erros = validaPaciente(paciente);
-  
+
   /* Se o tamanho da String for maior que 0, 
   significa que ocorreu algum erro. */
   if (erros.length > 0) {
@@ -30,11 +30,16 @@ botaoAdicionar.addEventListener("click", function (event) {
   //selecionar a tabela e adicionar a tr usando o appendChild
   tabela.appendChild(pacientetr);
 
+  adicionaPacienteNaTabela(paciente);
+
   form.reset();
   var mensagensErro = document.querySelector("#mensagens-erro");
   //remover as mensagens de erro caso seja adicionado um paciente válido.
   mensagensErro.innerHTML = "";
 });
+
+
+////////////////FUNÇÕES////////////////////////////////////
 
 function obtemPacienteDoFormulario(form) {
 
@@ -122,6 +127,11 @@ function exibiMensagemErro(erros) {
 
 }
 
+function adicionaPacienteNaTabela(paciente) {
+  var pacienteTr = montatr(paciente);
+  var tabela = document.querySelector("#tabela-pacientes");
+  tabela.appendChild(pacienteTr);
+}
 
 //mesma função porem mais legivel
 /* function validaPaciente(paciente) {
